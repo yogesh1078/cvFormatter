@@ -9,10 +9,20 @@
 <body>
     <form>
 
-        <input type="text" placeholder="Enter name">
-        <input type="text"  placeholder="Last name">
-        <input type="button" value="submit">
+        <input type="text"  id="fn"placeholder="Enter name">
+        <input type="text" id ="ln"  placeholder="Last name">
+        <input type="button" value="submit"  onclick="fun()">
     </form>
+    <p id="demo"></p>
+
+    <script>
+
+     function fun()
+     {
+        let fname = document.querySelector("#fn").value;
+        document.getElementById("demo").innerHTML = fname;
+     }
+    </script>
     
 </body>
 </html>
