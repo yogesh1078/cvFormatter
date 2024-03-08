@@ -2,27 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <title>CV Formate</title>
-
+    <title>CV Format</title>
 </head>
 <body>
     <form>
-
-        <input type="text"  id="fn"placeholder="Enter name">
-        <input type="text" id ="ln"  placeholder="Last name">
-        <input type="button" value="submit"  onclick="fun()">
+        <input type="text" id="fn" placeholder="Enter name">
+        <input type="text" id="ln" placeholder="Last name">
+        <input type="button" id="submit2" value="submit" onclick="fun()">
     </form>
     <p id="demo"></p>
 
     <script>
-
-     function fun()
-     {
+     function fun() {
         let fname = document.querySelector("#fn").value;
         document.getElementById("demo").innerHTML = fname;
+        localStorage.setItem('fn', fname);
      }
     </script>
-    
 </body>
 </html>
