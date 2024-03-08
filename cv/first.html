@@ -36,15 +36,15 @@
 </div>
  <div class="PersonalInfo">
   <p id="DOB">Date of birth         : </p>
-   <p id="Fathername">Father's name : </p>
+   <p >Father's name :  <span id="fathername"></span> </p>
    <p id="Pno">Phone Number         : </p>
-   <p id="ema">Email Address        :</p>
-   <p id="str">Strength             : </p>
-   <p id ="Hbby">Hobby              :</p>
-   <p id=" lang">Language Known     : </p>
-   <p id ="Linkd">Linkdin           : </p>
-   <p id="Git"> Github              :</p>
-   <p id = "Paddr"> Permanent Address : </p>
+   <p >Email Address        : <span id="ema"></span></p>
+   <p id="str">Strength             :  <span id="ema"></span></p>
+   <p id ="Hbby">Hobby              :<span id="ema"></span></p>
+   <p id=" lang">Language Known     : <span id="ema"></span></p>
+   <p id ="Linkd">Linkdin           : <span id="ema"></span></p>
+   <p id="Git"> Github              : <span id="ema"></span></p>
+   <p id = "Paddr"> Permanent Address : <span id="ema"></span></p>
  
   </div>
   
@@ -75,10 +75,10 @@
   
    <div class="skls">
   <ul>
-      <li id="Programming">Programming language :  </li>
-      <li id="Database">Database management tools :  </li>
-      <li id="Other">Other framewok/Tools/Library :  </li>
-      <li id="Os">Operating Systems worked-with:  </li>
+      <li id="Programming">Programming language : <span id="ema"></span> </li>
+      <li id="Database">Database management tools :  <span id="ema"></span></li>
+      <li id="Other">Other framewok/Tools/Library :  <span id="ema"></span></li>
+      <li id="Os">Operating Systems worked-with:  <span id="ema"></span></li>
    </ul>
     </div>
     
@@ -97,10 +97,22 @@
 </div>
    <div>
     <ul>
-    <li id = "Achievem"> </li>
-    <li id = "Certif" > </li>
+    <li id = "Achievem"> <span id="Achievem"></span></li>
+    <li id = "Certif" > <span id="ema"></span></li>
     </ul>
     </div>
+ <script>
+  const  queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+ 
+  const lastname = urlParams.get('fathername');
+  const Email = urlParams.get('Email');
+  
+  let b = document.querySelector('#ema');
+  let c = document.querySelector('#fathername');
+  b.innerHTML = Email;
+  c.innerText = lastname; 
 
+ </script>
 </body>
 </html>
