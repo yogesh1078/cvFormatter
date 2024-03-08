@@ -29,13 +29,13 @@
 </style>
 </head>
 <body>
-<h1 id="Cname"> Yogesh</h1>
+<h1 id="Cname"></h1>
 <div class="container">
   <h2 id ="prsnlD">Personal details</h2>
   <div class="line"></div>
 </div>
  <div class="PersonalInfo">
-  <p id="DOB">Date of birth         : </p>
+  <p id="DOB">  </p>
    <p id="fathername"></p>
    <p id="Pno"> </p>
    <p id="ema"></p>
@@ -79,10 +79,10 @@
   
    <div class="skls">
   <ul>
-      <li id="Programming">Programming language : <span id="ema"></span> </li>
-      <li id="Database">Database management tools :  <span id="ema"></span></li>
-      <li id="Other">Other framewok/Tools/Library :  <span id="ema"></span></li>
-      <li id="Os">Operating Systems worked-with:  <span id="ema"></span></li>
+      <li id="Programming"> </li>
+      <li id="Database"></li>
+      <li id="Other"></li>
+      <li id="Os"></li>
    </ul>
     </div>
     
@@ -92,7 +92,7 @@
   <div class="line"></div>
 </div>
    <div>
-    <p id="PROJECTS" style" margin: 20px"> CV management system : A web portal ,where end user can (re)design curriculam vitae based  on available functionalities such as ,number of columns ,color of the headlines , and background color as a part of CS-2015 Web Technology course of 4th Semester in 2024 </p>
+    <p id="PROJECTS" style" margin: 20px"> </p>
     </div>
     
       <div class="container">
@@ -101,14 +101,32 @@
 </div>
    <div>
     <ul>
-    <li id = "Achievem"> <span id="Achievem"></span></li>
-    <li id = "Certif" > <span id="ema"></span></li>
+    <li id = "Achievem"> </li>
+    <li id = "Certif" > </li>
     </ul>
     </div>
  <script>
   const  queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
  
+
+  const Name = urlParams.get('name');
+  let NameId = document.querySelector('#Cname');
+  if(Name!='')
+  { 
+    NameId.innerHTML = `<p > ${Name}</p>`
+  }
+
+  const DateOfBirth = urlParams.get('dob');
+  let DateOfBirthId = document.querySelector('#DOB');
+  if(DateOfBirth !='')
+  { 
+    DateOfBirthId.innerHTML = `<p > Date Of Birth : ${DateOfBirth }</p>`
+  }
+
+
+
+  
   const lastname = urlParams.get('fathername');
   const Email = urlParams.get('Email');
   const phone = urlParams.get('mb');
@@ -259,6 +277,62 @@
     Cgpa10Id.innerHTML = `<p>Cgpa 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${Cgpa10} </p>`
   }
   
+  
+
+  const  programmingLanguage = urlParams.get('prgmL');
+  let programmingLanguageId =  document.querySelector('#Programming');
+  if(programmingLanguage!='')
+  { 
+    programmingLanguageId.innerHTML = `<p>Programming language : <span>${programmingLanguage} </span> </p>` 
+  }
+
+  const  database = urlParams.get('DataBL');
+  let databaseId =  document.querySelector('#Database');
+  if(database!='')
+  { 
+    databaseId.innerHTML = `<p>Database Management  Tools : <span>${database} </span> </p>` 
+  }
+
+  const  otherLang = urlParams.get('OthL');
+  let otherLangId =  document.querySelector('#Other');
+  if(otherLang !='')
+  { 
+    otherLangId.innerHTML = `<p>Other framewok/Tools/Library :  <span>${otherLang} </span> </p>` 
+  }
+
+
+  const  OperatingSystem = urlParams.get('OS');
+  let OperatingSystemId =  document.querySelector('#Os');
+  if(OperatingSystem !='')
+  { 
+    OperatingSystemId.innerHTML = `<p>Other framewok/Tools/Library: <span>${OperatingSystem} </span> </p>` 
+  }
+ 
+
+
+  const   projectUndertaken = urlParams.get('project');
+  let  projectUndertakenId =  document.querySelector('#PROJECTS');
+  if( projectUndertaken !='')
+  { 
+    projectUndertakenId.innerHTML = ` <p id="PROJECTS" style" margin: 20px"> ${projectUndertaken}</p>`
+  }
+
+  const  Achievements = urlParams.get('achievem');
+  let AchievementsId =  document.querySelector('#Achievem');
+  if(Achievements !='')
+  { 
+    AchievementsId.innerHTML = `<p> <span>${Achievements} </span> </p>` 
+  }
+
+  const  Certification = urlParams.get('certificate');
+  let CertificationId =  document.querySelector('#Certif');
+  if(Certification !='')
+  { 
+    CertificationId.innerHTML = `<p> <span>${Certification} </span> </p>` 
+  }
+
+
+    
 
  </script>
 </body>
