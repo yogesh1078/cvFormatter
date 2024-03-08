@@ -36,15 +36,15 @@
 </div>
  <div class="PersonalInfo">
   <p id="DOB">Date of birth         : </p>
-   <p >Father's name :  <span id="fathername"></span> </p>
-   <p id="Pno">Phone Number         : </p>
-   <p >Email Address        : <span id="ema"></span></p>
-   <p id="str">Strength             :  <span id="ema"></span></p>
-   <p id ="Hbby">Hobby              :<span id="ema"></span></p>
-   <p id=" lang">Language Known     : <span id="ema"></span></p>
-   <p id ="Linkd">Linkdin           : <span id="ema"></span></p>
-   <p id="Git"> Github              : <span id="ema"></span></p>
-   <p id = "Paddr"> Permanent Address : <span id="ema"></span></p>
+   <p id="fathername"></p>
+   <p id="Pno"> </p>
+   <p id="ema"></p>
+   <p id="str"></p>
+   <p id ="Hbby"></p>
+   <p id="lang2"></p>
+   <p id ="Linkd"></p>
+   <p id="Git"> </p>
+   <p id = "Paddr"> </p>
  
   </div>
   
@@ -53,18 +53,22 @@
   <div class="line"></div>
    </div>
     <div class="EduInfo">
-     <p> <span>Beachlor of Technology in </span> &nbsp &nbsp &nbsp &nbsp &nbsp <span>Indian Institute of Information Technology Senapati,Manipur</span> </p>
+     <p id="clgname">  </p>
   
-     <p> <span> Computer Science & Engineering </span> &nbsp &nbsp &nbsp &nbsp <span> CPI &nbsp : 9.7 </span> </p> 
-     <p> 2022-2026</p>
+     <p id = "branch"> </p> 
+     <p id = "year1"> </p>
+     <p id = "cpi1">  </p>
      <br>
      
-     <p> <span> 12th,Science </span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span> Institute name &nbsp:   </span> </p>
-     <p> <span> 2020-2022  </span>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span> CGPI&nbsp:  </span> </p>
-      <br>
-      
-        <p> <span> 10th </span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  <span> Institute name &nbsp:   </span> </p>
-     <p> <span> 2020   </span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <span> CGPI&nbsp:  </span> </p>
+     <p id = "scl12">  </p>
+     <p id = "scl12y">  </p>
+     <p id = "cgpa12">  </p>
+     
+     <br>
+     
+        <p id = "scl10">  </p>
+     <p id = "scl10y">  </p>
+     <p id = "cgpa10">  </p>
       <br>
   </div>
   
@@ -107,11 +111,154 @@
  
   const lastname = urlParams.get('fathername');
   const Email = urlParams.get('Email');
+  const phone = urlParams.get('mb');
+  let phoneId = document.querySelector('#Pno');
+  let emailId = document.querySelector('#ema');
+  let fatherId = document.querySelector('#fathername');
+  if(lastname!='')
+  {
+    fatherId.innerHTML =  `<p>Father Number         : <span> ${lastname}</span></p>`
+  }
+  if(Email!='')
+  {
+  emailId.innerHTML = `<p>Email         : <span> ${Email}</span></p>`
+  }
+  if(phone!='')
+  {
+  phoneId.innerHTML = `<p>Phone Number         : <span> ${phone}</span></p>`
+  }
+
+  const strength = urlParams.get('str');
+  let strengthId = document.querySelector('#str');
+  if(strength!='')
+  { 
+    strengthId.innerHTML = `<p >Strength             :  <span>${strength}</span></p>`
+  }
+
+
+
+
+
+  const hobby = urlParams.get('hobby');
+  let hobbyId = document.querySelector('#Hbby');
+  if(hobby!='')
+  { 
+    hobbyId.innerHTML = `<p >Hobby            :  <span>${hobby}</span></p>`
+  }
+
+
+  const language = urlParams.get('lang');
+  let languageId = document.querySelector('#lang2');
+  if(language!='')
+  { 
+    languageId.innerHTML = `<p>Language  Known            :  <span>${language}</span></p>`
+  }
+
+
+  const linkedin = urlParams.get('linkedin');
+  let linkedinId= document.querySelector('#Linkd');
+  if(linkedin!='')
+  { 
+    linkedinId.innerHTML = `<p >Linkedin            :  <span>${linkedin}</span></p>`
+  }
+
+
+
+
+  const git = urlParams.get('git');
+  let gitId= document.querySelector('#Git');
+  if(git!='')
+  { 
+    gitId.innerHTML = `<p >Git HUB            :  <span>${git}</span></p>`
+  }
+
+
+
+  const Address = urlParams.get('addr');
+  let AddressId= document.querySelector('#Paddr');
+  if(Address!='')
+  { 
+    gitId.innerHTML = `<p >Permanent Address           :  <span>${Address}</span></p>`
+  }
+
+  const collegeName = urlParams.get('graduI');
+  let collegeNameId =  document.querySelector('#clgname');
+  if(collegeName!='')
+  { 
+    collegeNameId.innerHTML = `<p><span>Beachlor of Technology in </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${collegeName} </p>`
+  }
+
+
+  /*const branch = urlParams.get('brch');
+  let branchId =  document.querySelector('#brch');
+  if(branch!='')
+  { 
+    branchId.innerHTML = `<p><span>Branch </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${branch} </p>`
+  }*/
   
-  let b = document.querySelector('#ema');
-  let c = document.querySelector('#fathername');
-  b.innerHTML = Email;
-  c.innerText = lastname; 
+
+
+  const year = urlParams.get('graduY');
+  let yearId =  document.querySelector('#year1');
+  if(year!='')
+  { 
+    yearId.innerHTML = `<p></span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year} </p>`
+  }
+
+
+  const  cpi = urlParams.get('graduC');
+  let cpiId =  document.querySelector('#cpi1');
+  if(cpi!='')
+  { 
+    cpiId.innerHTML = `<p>CPI : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${cpi} </p>`
+  }
+
+  const  schoolName12 = urlParams.get('C12I');
+  let schoolName12Id =  document.querySelector('#scl12');
+  if(schoolName12!='')
+  { 
+    schoolName12Id.innerHTML = `<p>School name 12th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${schoolName12} </p>`
+  }
+
+
+  const  year12 = urlParams.get('C12Y');
+  let year12Id =  document.querySelector('#scl12y');
+  if(year12!='')
+  { 
+    year12Id.innerHTML = `<p>year 12th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year12} </p>`
+  }
+  
+  const  Cgpa12 = urlParams.get('C12C');
+  let Cgpa12Id =  document.querySelector('#cgpa12');
+  if(Cgpa12!='')
+  { 
+    Cgpa12Id.innerHTML = `<p>Cgpa 12th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${Cgpa12} </p>`
+  }
+
+
+
+  const  schoolName10 = urlParams.get('C10I');
+  let schoolName10Id =  document.querySelector('#scl10');
+  if(schoolName10!='')
+  { 
+    schoolName10Id.innerHTML = `<p>school 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${schoolName10} </p>`
+  }
+
+  const  year10 = urlParams.get('C10Y');
+  let year10Id =  document.querySelector('#scl10y');
+  if(year10!='')
+  { 
+    year10Id.innerHTML = `<p>year 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year10} </p>`
+  }
+
+
+  const  Cgpa10 = urlParams.get('C10C');
+  let Cgpa10Id =  document.querySelector('#cgpa10');
+  if(Cgpa12!='')
+  { 
+    Cgpa10Id.innerHTML = `<p>Cgpa 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${Cgpa10} </p>`
+  }
+  
 
  </script>
 </body>
