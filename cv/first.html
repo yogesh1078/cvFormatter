@@ -106,7 +106,7 @@
     </ul>
     </div>
 
-   <button onclick = "window.print()">downlod</button>
+   <button onclick = "buttonclick()">downlod</button>
 
  <script>
   const  queryString = window.location.search;
@@ -210,20 +210,12 @@
   }
 
 
-  /*const branch = urlParams.get('brch');
-  let branchId =  document.querySelector('#brch');
-  if(branch!='')
-  { 
-    branchId.innerHTML = `<p><span>Branch </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${branch} </p>`
-  }*/
-  
-
-
+  const branch = urlParams.get('gradu');
   const year = urlParams.get('graduY');
   let yearId =  document.querySelector('#year1');
-  if(year!='')
+  if(year!=''||branch!='')
   { 
-    yearId.innerHTML = `<p></span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year} </p>`
+    yearId.innerHTML = `<p></span> ${branch}&nbsp &nbsp &nbsp &nbsp &nbsp ${year} </p>`
   }
 
 
@@ -262,14 +254,14 @@
   let schoolName10Id =  document.querySelector('#scl10');
   if(schoolName10!='')
   { 
-    schoolName10Id.innerHTML = `<p>school 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${schoolName10} </p>`
+    schoolName10Id.innerHTML = `<p>SChool(10th) : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${schoolName10} </p>`
   }
 
   const  year10 = urlParams.get('C10Y');
   let year10Id =  document.querySelector('#scl10y');
   if(year10!='')
   { 
-    year10Id.innerHTML = `<p>year 10th : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year10} </p>`
+    year10Id.innerHTML = `<p> Year(10th) : </span> &nbsp &nbsp &nbsp &nbsp &nbsp ${year10} </p>`
   }
 
 
@@ -333,8 +325,13 @@
   { 
     CertificationId.innerHTML = `<p> <span>${Certification} </span> </p>` 
   }
+  let button = document.querySelector('button');
+   function buttonclick()
+   {
+     button.innerHTML = '';
+     window.print(); 
 
-
+   }
     
 
  </script>
