@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+
+        </head>
+        <body>
+
+
+           
+            <h1> Fill Data of form and get different format </h1>
+  
+      
+          <input type="text" name = 'name' id="name" placeholder="Enter name"><br><br>
+          <input type="text" name = 'dob' id="dob" placeholder="Enter DOB"><br><br>
+          <input type="text" name = 'fathername' id="faname" placeholder="Enter Fathers name"><br><br>
+          <input type="tel " name="mb" id="mb" placeholder = "Enter Mobile Number"><br><br>
+          <input type="email" name="Email" id="Email" placeholder = "Enter the Email"><br><br>
+          <input type ="text" name="str" id="str" placeholder="Tell about your strength" ><br><br>
+          <input type="text" name="hobby" id="hobby" placeholder="What is your hobbies"><br><br>
+          <input type="text"  name="lang" id="lang" placeholder="Enter your lanuage"><br><br>
+          <input type="text" name="linkedin" id="linkedin" placeholder="Enter your Linkedin id"><br><br>
+          <input type ="text" name="git" id="git" placeholder =" Enter your git hub account"><br><br>
+          <input type ="text"  name="addr" id="addr" placeholder="Enter your permanent Address"><br><br>
+          
+          
+          
+          <input type="text" name="gradu" id="gradu" placeholder="Enter your graduation Branch"><br><br>
+          <input type="text" name="graduI" id="graduI" placeholder="Enter your graduation Institute"><br><br>
+          <input type="text" name="graduY" id="graduY" placeholder="Enter your graduation Year"><br><br>
+          <input type="text" name="graduC" id="graduC" placeholder="Enter your graduation CPI"><br><br>
+          
+          
+              
+         
+          <input type="text" name="C12I" id="C12I" placeholder="Enter your Class 12th Institute"><br><br>
+          <input type="text" name="C12Y" id="C12Y" placeholder="Enter your Class 12th Year"><br><br>
+          <input type="text" name="C12C" id="C12C" placeholder="Enter your Class 12th CGPI"><br><br>
+          
+           <input type="text" name="C10I" id="C10I" placeholder="Enter your Class 10th Institute"><br><br>
+          <input type="text" name="C10Y" id="C10Y" placeholder="Enter your Class 10th Year"><br><br>
+          <input type="text" name="C10C" id="C10C" placeholder="Enter your Class 10th CGPI"><br><br>
+          
+          <input type="text" name="prgmL" id="prgmL" placeholder="Enter Your Programming Languages"><br><br>
+          <input type="text" name="DataBL" id="DataBL"  placeholder="Enter Your Database tools"><br><br>
+          <input type="text" name="OthL" id="OthL" placeholder="Enter Your Other framework Knowledge"><br><br>
+          <input type="text" name="OS" id="OS" placeholder="Enter worked-with operating system"><br><br>
+          
+          <input type="text" name="project" id="project" placeholder="Enter Your Project Details"><br><br>
+          
+           <input type="text" name="achievem" id="achievem" placeholder="Enter Your Achievements"><br><br>
+           <input type="text" name="certificate"  id="certificate" placeholder="Enter your Certifications "><br><br>
+     
+ 
+     
+      <a id="html" download="file.xml" href =" "  onclick="ram()">download</a>. 
+
+
+<script>  
+
+function ram()
+{
+
+let hm = document.querySelector('#html');
+let input = document.querySelector('#name');
+let DOB = document.querySelector('#dob');
+let FatherName = document.querySelector('#faname');
+let MobileNum = document.querySelector('#mb');
+
+
+let t = `<PersonalDetails>
+<name> ${input.value} </name>
+<DOB> ${DOB.value} </DOB>
+<Father> ${FatherName.value} </Father>
+<Mobile> ${MobileNum.value} </Mobile>
+
+</PersonalDetails>`
+
+
+
+
+
+
+let blob1 = new Blob([t]);
+hm.href = URL.createObjectURL(blob1);
+}
+</script>  
+  </body>
+</html>
